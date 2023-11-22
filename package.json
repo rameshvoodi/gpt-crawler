@@ -18,14 +18,15 @@
     "@apify/tsconfig": "^0.1.0",
     "@types/inquirer": "^9.0.7",
     "@types/node": "^20.0.0",
+    "cross-env": "^7.0.3",
     "ts-node": "^10.8.0",
     "typescript": "^5.0.0"
   },
   "scripts": {
     "preinstall": "npx playwright install",
     "start": "npm run start:dev",
-    "start:cli": "NODE_ENV=development npm run build && node dist/src/cli.js",
-    "start:dev": "NODE_ENV=development npm run build && node dist/src/main.js",
+    "start:cli": "cross-env NODE_ENV=development npm run build && node dist/src/cli.js",
+    "start:dev": "cross-env NODE_ENV=development npm run build && node dist/src/main.js",
     "start:prod": "node dist/main.js",
     "build": "tsc",
     "fmt": "prettier --write ."
